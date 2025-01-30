@@ -1,5 +1,6 @@
 """Entity platform for Electrolux Status."""
 
+import json
 import logging
 from typing import Any, cast
 
@@ -121,12 +122,27 @@ class ElectroluxEntity(CoordinatorEntity):
         """Confirm if device should be polled."""
         return False
 
+    @property
+    def appliance_status(self):
+        if self.coordinator._dummy:
+            return self.coordinator.dummy_appliance_status(self.pnc_id)
+
+        appliances = self.coordinator.data.get("appliances", None)
+        self.appliance_status = appliances.get_appliance(self.pnc_id).state
+
+    # async def dummy_appliance_state(self):
+    #     return open("f{self.coordinator._dummy_path}/get_appliance_state.json")
+
     def _handle_coordinator_update(self) -> None:
         """Handle updated data from the coordinator."""
         # _LOGGER.debug("Electrolux entity got data %s", self.coordinator.data)
+
         if self.coordinator.data is None:
             return
         appliances = self.coordinator.data.get("appliances", None)
+        # if self.coordinator._dummy:
+        #     self.appliance_status = self.coordinator._dummy_appliance_state(self.pnc_id)
+        # else:
         self.appliance_status = appliances.get_appliance(self.pnc_id).state
         self.async_write_ha_state()
 
@@ -141,6 +157,7 @@ class ElectroluxEntity(CoordinatorEntity):
 
         Used for the evaluation of state_mapping one property to another.
         """
+        _LOGGER.error(path)
         if "/" in path:
             if self.reported_state.get(path, None):
                 return self.reported_state.get(path)
@@ -239,13 +256,14 @@ class ElectroluxEntity(CoordinatorEntity):
         """Return matched catalog entry."""
         return self._catalog_entry
 
-    # @property
-    # def extra_state_attributes(self) -> dict[str, Any]:
-    #     """Return the state attributes of the sensor."""
-    #     return {
-    #         "Path": self.json_path,
-    #         "entity_type": str(self.entity_type),
-    #         "entity_category": str(self.entity_category),
-    #         "device_class": str(self.device_class),
-    #         "capability": str(self.capability),
-    #     }
+    @property
+    def extra_state_attributes(self) -> dict[str, Any]:
+        """Return the state attributes of the sensor."""
+        return {
+            "Path": self.json_path,
+            "entity_type": str(self.entity_type),
+            "entity_category": str(self.entity_category),
+            "device_class": str(self.device_class),
+            "capability": str(self.capability),
+            "state": str(self.extract_value()),
+        }

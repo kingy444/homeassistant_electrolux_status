@@ -68,6 +68,7 @@ class ElectroluxSensor(ElectroluxEntity, SensorEntity):
             value = len(value) if value is not None else 0
         elif value is not None and isinstance(self.unit, UnitOfTime):
             # Electrolux bug - prevent negative/disabled timers
+            _LOGGER.debug("Path %s Value %s", self.json_path, value)
             value = max(value, 0)
         if self.catalog_entry and self.catalog_entry.value_mapping:
             # Electrolux presents as string but returns an int
@@ -125,4 +126,11 @@ class ElectroluxSensor(ElectroluxEntity, SensorEntity):
                         title=self.name,
                     )
             return alert_types
-        return {}
+        # return {}
+        return {
+            "Path": self.json_path,
+            "entity_type": str(self.entity_type),
+            "entity_category": str(self.entity_category),
+            "device_class": str(self.device_class),
+            "capability": str(self.capability),
+        }

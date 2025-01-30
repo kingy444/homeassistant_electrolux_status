@@ -52,6 +52,8 @@ class ElectroluxNumber(ElectroluxEntity, NumberEntity):
             value = time_seconds_to_minutes(self.extract_value())
         else:
             value = self.extract_value()
+        # _LOGGER.warning("entity: %s value: %s", self.entity_id, value)
+        # _LOGGER.warning(self.extra_state_attributes)
 
         if not value:
             value = self.capability.get("default", None)

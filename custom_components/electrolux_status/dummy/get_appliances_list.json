@@ -1,0 +1,493 @@
+[
+  {
+    "applianceId": "12345678_99:15830663-KCS1PY2J7566",
+    "applianceData": {
+      "applianceName": "Oven",
+      "created": "2023-10-31T19:44:35.101Z",
+      "modelName": "OV"
+    },
+    "properties": {
+      "desired": {},
+      "reported": {
+        "doorState": "CLOSED",
+        "timeToEnd": -1,
+        "remoteControl": "NOT_SAFETY_RELEVANT_ENABLED",
+        "targetTemperatureF": 302.0,
+        "targetTemperatureC": 150.0,
+        "program": "TRUE_FAN",
+        "targetMicrowavePower": 65535,
+        "displayFoodProbeTemperatureC": -17.833333333333332,
+        "waterTrayInsertionState": "INSERTED",
+        "waterTankEmpty": "STEAM_TANK_FULL",
+        "targetDuration": 0,
+        "startTime": -1,
+        "applianceInfo": {
+          "applianceType": "OV"
+        },
+        "displayFoodProbeTemperatureF": -0.1,
+        "targetFoodProbeTemperatureC": -17.833333333333332,
+        "targetFoodProbeTemperatureF": -0.1,
+        "runningTime": 0,
+        "applianceState": "READY_TO_START",
+        "alerts": [],
+        "displayTemperatureC": 30.0,
+        "networkInterface": {
+          "swVersion": "v1.9.3_hacl",
+          "linkQualityIndicator": "VERY_GOOD",
+          "otaState": "IDLE",
+          "swAncAndRevision": "S00007936A",
+          "niuSwUpdateCurrentDescription": "A16323312A-S00007936A"
+        },
+        "foodProbeInsertionState": "NOT_INSERTED",
+        "displayTemperatureF": 86.0,
+        "cavityLight": false,
+        "processPhase": "NONE",
+        "connectivityState": "connected"
+      },
+      "metadata": {}
+    },
+    "status": "enabled",
+    "connectionState": "connected"
+  },
+  {
+    "applianceId": "12345678_99:15830663-KCS1PY2J7567",
+    "applianceData": {
+      "applianceName": "Washer",
+      "created": "2023-10-31T21:50:59.411Z",
+      "modelName": "WM"
+    },
+    "properties": {
+      "desired": {},
+      "reported": {
+        "doorState": "CLOSED",
+        "timeToEnd": 3300,
+        "displayLight": "DISPLAY_LIGHT_0",
+        "networkInterfaceAlwaysOn": "ON",
+        "miscellaneous": {
+          "defaultSoftPlus": false
+        },
+        "applianceUiSwVersion": "URDA003C",
+        "applianceTotalWorkingTime": 244800,
+        "remoteControl": "ENABLED",
+        "language": "ENGLISH",
+        "fCMiscellaneousState": {
+          "optisenseResult": 1000,
+          "detergentExtradosage": 0,
+          "ecoLevel": 6,
+          "tankAReserve": false,
+          "tankBReserve": false,
+          "softenerExtradosage": 0,
+          "waterUsage": 0,
+          "tankADetLoadForNominalWeight": 0,
+          "tankBDetLoadForNominalWeight": 0
+        },
+        "cyclePhase": "WASH",
+        "endOfCycleSound": "SHORT_SOUND",
+        "stopTime": -1,
+        "startTime": -1,
+        "userSelections": {
+          "EWX1493A_ultraMix": false,
+          "adTankASel": "AUTODOSE_OFF",
+          "EWX1493A_stain": false,
+          "adTankBSel": "AUTODOSE_OFF",
+          "EWX1493A_wetMode": true,
+          "timeManagerLevel": "NORMAL",
+          "EWX1493A_dryMode": false,
+          "EWX1493A_preWashPhase": false,
+          "analogSpinSpeed": "800_RPM",
+          "extraRinseNumber": "NONE",
+          "EWX1493A_steamMode": false,
+          "EWX1493A_easyIron": false,
+          "EWX1493A_rinseHold": false,
+          "analogTemperature": "30_CELSIUS",
+          "EWX1493A_wmEconomy": false,
+          "memoryId": 255,
+          "EWX1493A_nightCycle": false,
+          "steamValue": "STEAM_OFF",
+          "EWX1493A_tcSensor": false,
+          "programUID": "DELICATE_PR_DELICATES",
+          "EWX1493A_anticreaseNoSteam": false,
+          "EWX1493A_anticreaseWSteam": false,
+          "EWX1493A_intensive": false,
+          "EWX1493A_pod": true
+        },
+        "minFinishInTime": 7200,
+        "defaultExtraRinse": "EXTRA_RINSE_OFF",
+        "waterHardness": "STEP_4",
+        "totalWashingTime": 244800,
+        "applianceInfo": {
+          "applianceType": "WM"
+        },
+        "doorLock": "ON",
+        "uiLockMode": false,
+        "washingNominalLoadWeight": 2000,
+        "dwywWashData": {
+          "wmLoadWeight": 10,
+          "wmLoadMoisture": 70,
+          "dwywDataType": "FOR_UPDATE",
+          "roomTemp": 255,
+          "wmLoadError": 20,
+          "programUID": "DELICATE_PR_DELICATES"
+        },
+        "totalWashCyclesCount": 44,
+        "fcOptisenseLoadWeight": 65410,
+        "waterSoftenerMode": "WASH_ONLY",
+        "applianceState": "RUNNING",
+        "applianceMode": "NORMAL",
+        "applianceMainBoardSwVersion": "WKB32009",
+        "totalCycleCounter": 44,
+        "measuredLoadWeight": 65535,
+        "alerts": [],
+        "networkInterface": {
+          "swVersion": "v3.0.0S_argo",
+          "otaState": "IDLE",
+          "linkQualityIndicator": "VERY_GOOD",
+          "niuSwUpdateCurrentDescription": "A23642201A-S00007645A",
+          "swAncAndRevision": "S00007645A"
+        },
+        "applianceCareAndMaintenance0": {
+          "1": {
+            "occured": false,
+            "threshold": 60
+          },
+          "2": {
+            "occured": false,
+            "threshold": 80
+          },
+          "3": {
+            "occured": false,
+            "threshold": 80
+          },
+          "4": {
+            "occured": false,
+            "threshold": 240
+          },
+          "5": {
+            "occured": false,
+            "threshold": 240
+          }
+        },
+        "remoteNotificationPending": "OFF",
+        "applianceCareAndMaintenance1": {
+          "6": {
+            "occured": false,
+            "threshold": 150
+          },
+          "7": {
+            "occured": false,
+            "threshold": 0
+          },
+          "8": {
+            "occured": false,
+            "threshold": 0
+          },
+          "9": {
+            "occured": false,
+            "threshold": 0
+          },
+          "10": {
+            "occured": false,
+            "threshold": 0
+          }
+        },
+        "applianceCareAndMaintenance2": {
+          "11": {
+            "occured": false,
+            "threshold": 0
+          }
+        },
+        "applianceCareAndMaintenance3": {
+          "16": {
+            "occured": false,
+            "threshold": 0
+          }
+        },
+        "cycleMemory3": {
+          "EWX1493A_ultraMix": false,
+          "EWX1493A_stain": false,
+          "EWX1493A_wetMode": false,
+          "EWX1493A_dryMode": false,
+          "EWX1493A_preWashPhase": false,
+          "analogSpinSpeed": "DISABLED",
+          "EWX1493A_steamMode": false,
+          "EWX1493A_easyIron": false,
+          "EWX1493A_rinseHold": false,
+          "EWX1493A_wmEconomy": false,
+          "memoryId": 10,
+          "EWX1493A_nightCycle": false,
+          "EWX1493A_tcSensor": false,
+          "programUID": "MACHINE_SETTINGS_HIDDEN_TEST",
+          "EWX1493A_anticreaseNoSteam": false,
+          "EWX1493A_anticreaseWSteam": false,
+          "EWX1493A_intensive": false,
+          "EWX1493A_pod": false,
+          "timeManagerLevel": "TIME_MANAGER_HIDDEN"
+        },
+        "autoDosing": {
+          "adTankBDetStandardDose": 0,
+          "adLocalFineTuning": false,
+          "adTankAConfiguration": "DISABLED",
+          "adTankBSoftStandardDose": 0,
+          "adTankBConfiguration": "DISABLED",
+          "adTankADetStandardDose": 0
+        },
+        "cycleSubPhase": "NOT_AVAILABLE",
+        "connectivityState": "connected",
+        "cycleMemory2": {
+          "EWX1493A_ultraMix": false,
+          "EWX1493A_stain": false,
+          "EWX1493A_wetMode": false,
+          "EWX1493A_dryMode": false,
+          "EWX1493A_preWashPhase": false,
+          "analogSpinSpeed": "DISABLED",
+          "EWX1493A_steamMode": false,
+          "EWX1493A_easyIron": false,
+          "EWX1493A_rinseHold": false,
+          "EWX1493A_wmEconomy": false,
+          "memoryId": 20,
+          "EWX1493A_nightCycle": false,
+          "EWX1493A_tcSensor": false,
+          "programUID": "MACHINE_SETTINGS_HIDDEN_TEST",
+          "EWX1493A_anticreaseNoSteam": false,
+          "EWX1493A_anticreaseWSteam": false,
+          "EWX1493A_intensive": false,
+          "EWX1493A_pod": false,
+          "timeManagerLevel": "TIME_MANAGER_HIDDEN"
+        },
+        "cycleMemory1": {
+          "EWX1493A_ultraMix": false,
+          "EWX1493A_stain": false,
+          "EWX1493A_wetMode": false,
+          "EWX1493A_dryMode": false,
+          "EWX1493A_preWashPhase": false,
+          "analogSpinSpeed": "DISABLED",
+          "EWX1493A_steamMode": false,
+          "EWX1493A_easyIron": false,
+          "EWX1493A_rinseHold": false,
+          "EWX1493A_wmEconomy": false,
+          "memoryId": 30,
+          "EWX1493A_nightCycle": false,
+          "EWX1493A_tcSensor": false,
+          "programUID": "MACHINE_SETTINGS_HIDDEN_TEST",
+          "EWX1493A_anticreaseNoSteam": false,
+          "EWX1493A_anticreaseWSteam": false,
+          "EWX1493A_intensive": false,
+          "EWX1493A_pod": false,
+          "timeManagerLevel": "TIME_MANAGER_HIDDEN"
+        }
+      },
+      "metadata": {}
+    },
+    "status": "enabled",
+    "connectionState": "connected"
+  },
+  {
+    "applianceId": "12345678_99:15830663-KCS1PY2J7568",
+    "applianceData": {
+      "applianceName": "Dryer",
+      "created": "2023-10-31T20:07:10.458Z",
+      "modelName": "TD"
+    },
+    "properties": {
+      "desired": {},
+      "reported": {
+        "doorState": "OPEN",
+        "networkInterfaceAlwaysOn": "ON",
+        "timeToEnd": -1,
+        "miscellaneous": {},
+        "applianceUiSwVersion": "URDB003G",
+        "applianceTotalWorkingTime": 208800,
+        "remoteControl": "NOT_SAFETY_RELEVANT_ENABLED",
+        "language": "ENGLISH",
+        "dryingNominalLoadWeight": 65535,
+        "fCMiscellaneousState": {
+          "optisenseResult": 65535,
+          "ecoLevel": 255
+        },
+        "cyclePhase": "UNAVAILABLE",
+        "endOfCycleSound": "SHORT_SOUND",
+        "stopTime": -1,
+        "startTime": -1,
+        "dwywInfo": {
+          "wmSn": "00000000",
+          "state": "OFF"
+        },
+        "userSelections": {
+          "reversePlus": false,
+          "tDEconomy_Eco": true,
+          "humidityTarget": "CUPBOARD",
+          "refresh": false,
+          "dryingTime": 0,
+          "drynessValue": "MINIMUM",
+          "memoryId": 255,
+          "programUID": "EXTRA_DELICATE_PR_DELICATES",
+          "antiCreaseValue": 30,
+          "tDEconomy_Night": false,
+          "tDEconomy_Quick": false,
+          "steamValue": "STEAM_OFF"
+        },
+        "minFinishInTime": 10800,
+        "waterHardness": "HARD",
+        "applianceInfo": {
+          "applianceType": "TD"
+        },
+        "uiLockMode": false,
+        "fcOptisenseLoadWeight": 65535,
+        "applianceState": "IDLE",
+        "applianceMode": "NORMAL",
+        "applianceMainBoardSwVersion": "TR140056",
+        "totalCycleCounter": 40,
+        "measuredLoadWeight": 65535,
+        "alerts": [],
+        "networkInterface": {
+          "swVersion": "v3.0.0S_argo",
+          "otaState": "IDLE",
+          "linkQualityIndicator": "VERY_GOOD",
+          "niuSwUpdateCurrentDescription": "A23642201A-S00007645A",
+          "swAncAndRevision": "S00007645A"
+        },
+        "remoteNotificationPending": "OFF",
+        "applianceCareAndMaintenance0": {
+          "1": {
+            "occured": false,
+            "threshold": 255
+          },
+          "2": {
+            "occured": false,
+            "threshold": 100
+          },
+          "3": {
+            "occured": false,
+            "threshold": 1
+          },
+          "4": {
+            "occured": false,
+            "threshold": 1
+          },
+          "5": {
+            "occured": false,
+            "threshold": 0
+          }
+        },
+        "applianceCareAndMaintenance1": {
+          "6": {
+            "occured": false,
+            "threshold": 0
+          },
+          "7": {
+            "occured": false,
+            "threshold": 0
+          },
+          "8": {
+            "occured": false,
+            "threshold": 0
+          },
+          "9": {
+            "occured": false,
+            "threshold": 0
+          },
+          "10": {
+            "occured": false,
+            "threshold": 0
+          }
+        },
+        "applianceCareAndMaintenance2": {
+          "11": {
+            "occured": false,
+            "threshold": 0
+          }
+        },
+        "cycleMemory3": {
+          "reversePlus": false,
+          "tDEconomy_Eco": false,
+          "refresh": false,
+          "dryingTime": 65535,
+          "memoryId": 10,
+          "programUID": "MACHINE_SETTINGS_HIDDEN_TEST",
+          "antiCreaseValue": 255,
+          "tDEconomy_Night": false,
+          "tDEconomy_Quick": false
+        },
+        "applianceCareAndMaintenance3": {
+          "16": {
+            "occured": false,
+            "threshold": 0
+          }
+        },
+        "connectivityState": "connected",
+        "cycleMemory2": {
+          "reversePlus": false,
+          "tDEconomy_Eco": false,
+          "refresh": false,
+          "dryingTime": 65535,
+          "memoryId": 20,
+          "programUID": "MACHINE_SETTINGS_HIDDEN_TEST",
+          "antiCreaseValue": 255,
+          "tDEconomy_Night": false,
+          "tDEconomy_Quick": false
+        },
+        "cycleMemory1": {
+          "reversePlus": false,
+          "tDEconomy_Eco": false,
+          "refresh": false,
+          "dryingTime": 65535,
+          "memoryId": 30,
+          "programUID": "MACHINE_SETTINGS_HIDDEN_TEST",
+          "antiCreaseValue": 255,
+          "tDEconomy_Night": false,
+          "tDEconomy_Quick": false
+        }
+      },
+      "metadata": {}
+    },
+    "status": "enabled",
+    "connectionState": "connected"
+  },
+  {
+    "applianceId": "12345678_99:15830663-KCS1PY2J7569",
+    "applianceData": {
+      "applianceName": "Mijn oven",
+      "created": "2022-10-28T13:46:22.158Z",
+      "modelName": "OV"
+    },
+    "properties": {
+      "desired": {},
+      "reported": {
+        "doorState": "CLOSED",
+        "temperatureRepresentation": "CELSIUS",
+        "timeToEnd": -1,
+        "remoteControl": "NOT_SAFETY_RELEVANT_ENABLED",
+        "targetTemperatureF": 302.0,
+        "targetTemperatureC": 150.0,
+        "program": "TRUE_FAN",
+        "displayFoodProbeTemperatureC": 0.0,
+        "waterTrayInsertionState": "INSERTED",
+        "waterTankEmpty": "STEAM_TANK_FULL",
+        "startTime": -1,
+        "targetDuration": 0,
+        "applianceInfo": {
+          "applianceType": "OV"
+        },
+        "displayFoodProbeTemperatureF": 32.0,
+        "targetFoodProbeTemperatureC": -17.833333333333332,
+        "targetFoodProbeTemperatureF": -0.1,
+        "runningTime": 0,
+        "applianceState": "READY_TO_START",
+        "alerts": [],
+        "displayTemperatureC": 30.0,
+        "networkInterface": {
+          "linkQualityIndicator": "VERY_GOOD",
+          "otaState": "IDLE"
+        },
+        "foodProbeInsertionState": "NOT_INSERTED",
+        "displayTemperatureF": 86.0,
+        "cavityLight": false,
+        "processPhase": "NONE",
+        "connectivityState": "connected"
+      },
+      "metadata": {}
+    },
+    "status": "enabled",
+    "connectionState": "connected"
+  }
+]

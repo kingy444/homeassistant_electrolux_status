@@ -1,0 +1,62 @@
+[
+  {
+    "pnc": "12345678_99:15830663-KCS1PY2J7567",
+    "brand": "AEG",
+    "market": "EUROPE",
+    "productArea": "CARE",
+    "deviceType": "WASHING_MACHINE",
+    "project": "RUBY ZP",
+    "model": "8000 Series WM",
+    "variant": "LFR83966OE",
+    "colour": "WHITE",
+    "status": 1,
+    "elc": "00",
+    "configurationName": null,
+    "productionReady": false
+  },
+  {
+    "pnc": "12345678_99:15830663-KCS1PY2J7568",
+    "brand": "AEG",
+    "market": "EUROPE",
+    "productArea": "CARE",
+    "deviceType": "TUMBLE_DRYER",
+    "project": "RUBY TD OPTIFLOW",
+    "model": "9000 Series",
+    "variant": "TR939I4CE",
+    "colour": "WHITE",
+    "status": 1,
+    "elc": "03",
+    "configurationName": null,
+    "productionReady": false
+  },
+  {
+    "pnc": "12345678_99:15830663-KCS1PY2J7566",
+    "brand": "AEG",
+    "market": "EUROPE",
+    "productArea": "TASTE",
+    "deviceType": "BUILT-IN OVEN",
+    "project": "OAD-OCA PUX AEG 2020",
+    "model": "BSE778380B",
+    "variant": "STEAMCRISP",
+    "colour": "BLACK",
+    "status": 1,
+    "elc": "00",
+    "configurationName": null,
+    "productionReady": false
+  },
+  {
+    "pnc": "12345678_99:15830663-KCS1PY2J7569",
+    "brand": "AEG",
+    "market": "EUROPE",
+    "productArea": "TASTE",
+    "deviceType": "BUILT-IN OVEN",
+    "project": "AEG VISION",
+    "model": "KSK998230T",
+    "variant": "STEAMPRO",
+    "colour": "MATT BLACK",
+    "status": 1,
+    "elc": "02",
+    "configurationName": null,
+    "productionReady": false
+  }
+]

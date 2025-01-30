@@ -1,0 +1,162 @@
+{
+  "applianceId": "12345678_99:15830663-KCS1PY2J7568",
+  "applianceData": {
+    "applianceName": "Dryer",
+    "created": "2023-10-31T20:07:10.458Z",
+    "modelName": "TD"
+  },
+  "properties": {
+    "desired": {},
+    "reported": {
+      "doorState": "OPEN",
+      "networkInterfaceAlwaysOn": "ON",
+      "timeToEnd": -1,
+      "miscellaneous": {},
+      "applianceUiSwVersion": "URDB003G",
+      "applianceTotalWorkingTime": 208800,
+      "remoteControl": "NOT_SAFETY_RELEVANT_ENABLED",
+      "language": "ENGLISH",
+      "dryingNominalLoadWeight": 65535,
+      "fCMiscellaneousState": {
+        "optisenseResult": 65535,
+        "ecoLevel": 255
+      },
+      "cyclePhase": "UNAVAILABLE",
+      "endOfCycleSound": "SHORT_SOUND",
+      "stopTime": -1,
+      "startTime": -1,
+      "dwywInfo": {
+        "wmSn": "00000000",
+        "state": "OFF"
+      },
+      "userSelections": {
+        "reversePlus": false,
+        "tDEconomy_Eco": true,
+        "humidityTarget": "CUPBOARD",
+        "refresh": false,
+        "dryingTime": 0,
+        "drynessValue": "MINIMUM",
+        "memoryId": 255,
+        "programUID": "EXTRA_DELICATE_PR_DELICATES",
+        "antiCreaseValue": 30,
+        "tDEconomy_Night": false,
+        "tDEconomy_Quick": false,
+        "steamValue": "STEAM_OFF"
+      },
+      "minFinishInTime": 10800,
+      "waterHardness": "HARD",
+      "applianceInfo": {
+        "applianceType": "TD"
+      },
+      "uiLockMode": false,
+      "fcOptisenseLoadWeight": 65535,
+      "applianceState": "IDLE",
+      "applianceMode": "NORMAL",
+      "applianceMainBoardSwVersion": "TR140056",
+      "totalCycleCounter": 40,
+      "measuredLoadWeight": 65535,
+      "alerts": [],
+      "networkInterface": {
+        "swVersion": "v3.0.0S_argo",
+        "otaState": "IDLE",
+        "linkQualityIndicator": "VERY_GOOD",
+        "niuSwUpdateCurrentDescription": "A23642201A-S00007645A",
+        "swAncAndRevision": "S00007645A"
+      },
+      "remoteNotificationPending": "OFF",
+      "applianceCareAndMaintenance0": {
+        "1": {
+          "occured": false,
+          "threshold": 255
+        },
+        "2": {
+          "occured": false,
+          "threshold": 100
+        },
+        "3": {
+          "occured": false,
+          "threshold": 1
+        },
+        "4": {
+          "occured": false,
+          "threshold": 1
+        },
+        "5": {
+          "occured": false,
+          "threshold": 0
+        }
+      },
+      "applianceCareAndMaintenance1": {
+        "6": {
+          "occured": false,
+          "threshold": 0
+        },
+        "7": {
+          "occured": false,
+          "threshold": 0
+        },
+        "8": {
+          "occured": false,
+          "threshold": 0
+        },
+        "9": {
+          "occured": false,
+          "threshold": 0
+        },
+        "10": {
+          "occured": false,
+          "threshold": 0
+        }
+      },
+      "applianceCareAndMaintenance2": {
+        "11": {
+          "occured": false,
+          "threshold": 0
+        }
+      },
+      "cycleMemory3": {
+        "reversePlus": false,
+        "tDEconomy_Eco": false,
+        "refresh": false,
+        "dryingTime": 65535,
+        "memoryId": 10,
+        "programUID": "MACHINE_SETTINGS_HIDDEN_TEST",
+        "antiCreaseValue": 255,
+        "tDEconomy_Night": false,
+        "tDEconomy_Quick": false
+      },
+      "applianceCareAndMaintenance3": {
+        "16": {
+          "occured": false,
+          "threshold": 0
+        }
+      },
+      "connectivityState": "connected",
+      "cycleMemory2": {
+        "reversePlus": false,
+        "tDEconomy_Eco": false,
+        "refresh": false,
+        "dryingTime": 65535,
+        "memoryId": 20,
+        "programUID": "MACHINE_SETTINGS_HIDDEN_TEST",
+        "antiCreaseValue": 255,
+        "tDEconomy_Night": false,
+        "tDEconomy_Quick": false
+      },
+      "cycleMemory1": {
+        "reversePlus": false,
+        "tDEconomy_Eco": false,
+        "refresh": false,
+        "dryingTime": 65535,
+        "memoryId": 30,
+        "programUID": "MACHINE_SETTINGS_HIDDEN_TEST",
+        "antiCreaseValue": 255,
+        "tDEconomy_Night": false,
+        "tDEconomy_Quick": false
+      }
+    },
+    "metadata": {}
+  },
+  "status": "enabled",
+  "connectionState": "connected"
+}

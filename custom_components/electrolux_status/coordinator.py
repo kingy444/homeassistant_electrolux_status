@@ -8,6 +8,7 @@ import logging
 from typing import Any
 
 from aiohttp import ClientResponseError
+import anyio
 from pyelectroluxocp import OneAppApi
 from pyelectroluxocp.apiModels import UserTokenResponse
 from pyelectroluxocp.oneAppApiClient import UserToken
@@ -52,6 +53,11 @@ class ElectroluxCoordinator(DataUpdateCoordinator):
         self._token: UserToken | None = None
         self._token_store: ElectroluxTokenStore | None = None
         self._store: Store[ElectroluxTokenStore] = Store(hass, STORAGE_VERSION, DOMAIN)
+        self._dummy: bool = False
+        self._dummy_path: str = (
+            "/workspaces/core/homeassistant/components/electrolux_status/dummy"
+        )
+        self._dummy_appliance_state = None
 
         super().__init__(hass, _LOGGER, name=DOMAIN)
 
@@ -175,6 +181,9 @@ class ElectroluxCoordinator(DataUpdateCoordinator):
 
     async def async_login(self) -> bool:
         """Authenticate with the service."""
+        if self._accountid == "dummy@hotmail.com":
+            self._dummy = True
+            return True
         try:
             # Check that one can extract the appliance list to confirm login?
             token = await self.api.get_user_token()
@@ -252,6 +261,8 @@ class ElectroluxCoordinator(DataUpdateCoordinator):
 
     def listen_websocket(self):
         """Listen for state changes."""
+        if self._dummy:
+            return
         appliances: Appliances = self.data.get("appliances", None)
         ids = appliances.get_appliance_ids()
         _LOGGER.debug("Electrolux listen_websocket for appliances %s", ",".join(ids))
@@ -328,11 +339,90 @@ class ElectroluxCoordinator(DataUpdateCoordinator):
         except Exception as ex:  # noqa: BLE001
             _LOGGER.error("Electrolux close_websocket could not close websocket %s", ex)
 
+    async def load_json(self, filename):
+        """Load json info from file."""
+        filepath = f"{self._dummy_path}/{filename}"
+        _LOGGER.debug("Loading: %s", filepath)
+        async with await anyio.open_file(f"{filepath}") as file:
+            file_content = await file.read()
+            # return json.load(file)
+        # Parse the file content into a JSON object
+        return json.loads(file_content)
+
+    def dummy_appliance_status(self, appliance_id):
+        # _LOGGER.warning(self._dummy_appliance_state.get(appliance_id).get("state"))
+        return self._dummy_appliance_state.get(appliance_id).get("state")
+
+    async def setup_dummy_entities(self):
+        """Configure false data for the entity."""
+        _LOGGER.debug("Electrolux setup_dummy_entities")
+
+        appliances = Appliances({})
+        self.data = {"appliances": appliances}
+
+        appliances_list = await self.load_json("get_appliances_list.json")
+
+        self._dummy_appliance_state = await self.load_json("get_appliance_detail.json")
+
+        for appliance_json in appliances_list:
+            appliance_capabilities = None
+            appliance_id = appliance_json.get("applianceId")
+            connection_status = appliance_json.get("connectionState")
+            appliance_name = appliance_json.get("applianceData").get("applianceName")
+
+            appliance_infos = await self.load_json("get_appliances_info.json")
+            for appliance_info in appliance_infos:
+                if appliance_info.get("pnc") == appliance_id:
+                    break
+
+            appliance_detail = await self.load_json("get_appliance_detail.json")
+            appliance_state = appliance_detail.get(appliance_id).get("state")
+            appliance_capabilities = appliance_detail.get(appliance_id).get(
+                "capabilities"
+            )
+            # appliance_state = await self.load_json("get_appliance_state.json")
+            # else:
+            #     appliance_state = await self.api.get_appliance_state(appliance_id)
+            # appliance_capabilities = await self.load_json(
+            #     "get_appliance_capabilities.json"
+            # )
+
+            appliance_info = appliance_infos[0] if appliance_infos else None
+
+            appliance_model = appliance_info.get("model") if appliance_info else ""
+            brand = appliance_info.get("brand") if appliance_info else ""
+            # appliance_profile not reported
+            appliance = Appliance(
+                coordinator=self,
+                pnc_id=appliance_id,
+                name=appliance_name,
+                brand=brand,
+                model=appliance_model,
+                state=appliance_state,
+            )
+            appliances.appliances[appliance_id] = appliance
+
+            appliance.setup(
+                ElectroluxLibraryEntity(
+                    name=appliance_name,
+                    status=connection_status,
+                    state=appliance_state,
+                    appliance_info=appliance_info,
+                    capabilities=appliance_capabilities,
+                )
+            )
+        return self.data
+
     async def setup_entities(self):
         """Configure entities."""
         _LOGGER.debug("Electrolux setup_entities")
+
+        if self._dummy:
+            return await self.setup_dummy_entities()
+
         appliances = Appliances({})
         self.data = {"appliances": appliances}
+
         try:
             appliances_list = await self.api.get_appliances_list()
             if appliances_list is None:
@@ -377,7 +467,7 @@ class ElectroluxCoordinator(DataUpdateCoordinator):
                     )
                 except Exception as exception:  # noqa: BLE001
                     _LOGGER.warning(
-                        "Electrolux unable to retrieve capabilities, we are going on our own",
+                        "Electrolux unable to retrieve capabilities, we are going on our own: %s",
                         exception,
                     )
                     # raise ConfigEntryNotReady(
@@ -415,6 +505,8 @@ class ElectroluxCoordinator(DataUpdateCoordinator):
 
     async def _async_update_data(self):
         """Update data via library."""
+        if self._dummy:
+            return self.data
         appliances: Appliances = self.data.get("appliances", None)
         for appliance_id, appliance in appliances.get_appliances().items():
             try:
